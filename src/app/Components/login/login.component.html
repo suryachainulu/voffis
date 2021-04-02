@@ -1,0 +1,33 @@
+
+<div class="loginform">
+<div class= "login">
+    <h1>VOFFIS Login Page</h1>
+</div>
+<div class="example">
+    <form class="example-form">
+        
+            <mat-form-field >
+              <mat-label>Email ID</mat-label>  
+            <input matInput   [(ngModel)]="userName" [ngModelOptions]="{standalone:true}"
+                 placeholder="Enter email" required>
+            
+                 <mat-icon matSuffix>person</mat-icon>
+                
+
+            </mat-form-field>  
+            
+
+        <div >
+            <mat-form-field>                
+            <input matInput [type]="hide ? 'password' : 'text'"  [(ngModel)]="password" [ngModelOptions]="{standalone:true}"
+                 placeholder="Password" required>
+                 <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+            </mat-form-field>    
+        </div>
+        <!-- <button type="submit" class="btn btn-primary" (click)="submit()">Login</button> -->
+        <button mat-raised-button color="primary" (click)="submit()">Login</button>
+    </form>
+</div>
+</div>
